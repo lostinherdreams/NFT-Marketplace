@@ -5,19 +5,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-contract NFT is ERC721, ERC721URIStorage, Ownable {
-    constructor(
-        address initialOwner,
-        string memory nftName,
-        string memory nftSymbol
-    ) ERC721(nftName, nftSymbol) Ownable(initialOwner) {}
+contract NFT is ERC721, ERC721URIStorage {
+    constructor() ERC721("market", "mk") {}
 
-    function safeMint(
-        address to,
-        uint256 tokenId,
-        string memory uri
-    ) public onlyOwner {
-        _safeMint(to, tokenId);
+    function safeMint(uint256 tokenId, string memory uri) external {
+        _safeMint(msg.sender, tokenId);
         _setTokenURI(tokenId, uri);
     }
 
