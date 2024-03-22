@@ -22,7 +22,7 @@ contract MarketPlace {
         owner = payable(msg.sender);
         elementID = 1;
         feePercentage = _feePercentage;
-        storageAddress = payable(address(new Storage()));
+        storageAddress = payable(address(new Storage(payable(msg.sender))));
     }
 
     event AddedForSale(

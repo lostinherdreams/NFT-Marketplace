@@ -9,7 +9,7 @@ async function main() {
 
     // Deploy the contract
     console.log("[ 🧐 ] Deploying...");
-    const nft = await NFT.deploy({ gasLimit: 2000000 });
+    const nft = await NFT.deploy();
     console.log("[ ✅ ] NFT deployed to:", await nft.getAddress());
 
     //waiting for the ...

@@ -21,4 +21,19 @@ module.exports = {
 
         }
     },
+    etherscan: {
+        apiKey: {
+            Amoy: "WIGNZCS5ZD4372GZZ6QIEZQR4BVZIC4D7I",
+        },
+        customChains: [
+          {
+            network: "Amoy",
+            chainId: 80002,
+            urls: {
+              apiURL: "https://rpc-amoy.polygon.technology/",
+              browserURL: "https://www.oklink.com/amoy"
+            }
+          }
+        ]
+      }
 };

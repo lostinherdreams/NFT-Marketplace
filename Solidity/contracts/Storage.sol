@@ -5,9 +5,9 @@ contract Storage {
     uint public balance;
     address payable owner;
 
-    constructor() {
+    constructor(address payable _owner) {
         balance = 0;
-        owner = payable(msg.sender);
+        owner = _owner;
     }
 
     event FundsStored(address indexed from, uint amount);
