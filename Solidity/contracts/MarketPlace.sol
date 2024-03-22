@@ -19,6 +19,7 @@ contract MarketPlace {
     mapping(uint => Element) public elements;
 
     constructor(uint _feePercentage) {
+        owner = payable(msg.sender);
         elementID = 1;
         feePercentage = _feePercentage;
         storageAddress = payable(address(new Storage()));
@@ -103,7 +104,15 @@ contract MarketPlace {
         elementID++;
     }
 
-    function getStorageAccount() view public onlyOwner returns (address) {
+    function getStorageAccount() public view onlyOwner returns (address) {
         return storageAddress;
+    }
+
+    function changeFeePercentage(uint _feePercentage) public {
+        require(
+            _feePercentage >= 0 && _feePercentage <= 100,
+            "not valid fee percentage!"
+        );
+        feePercentage = _feePercentage;
     }
 }
