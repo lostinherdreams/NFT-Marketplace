@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-
+import { ConnectBtn } from "./ConnectBtn/ConnectBtn";
+import { SearchBox } from "./SearchBox/SearchBox";
 export function NavBar() {
     return (
         <nav>
@@ -11,9 +12,7 @@ export function NavBar() {
                 </li>
                 <li>
                     <li>
-                        <button className="connect-wallet">
-                            Connect to Wallet
-                        </button>
+                        <ConnectBtn />
                     </li>
                 </li>
             </ul>
@@ -34,19 +33,7 @@ export function NavBar() {
                     </Link>
                 </li>
                 <li className="search">
-                    <div class="searchBox">
-                        <input
-                            class="searchInput"
-                            type="text"
-                            name=""
-                            placeholder="Search"
-                        />
-                        <button class="searchButton" href="#">
-                            <i class="material-icons">
-                                <img src="src\assets\search.png" alt="Search" />
-                            </i>
-                        </button>
-                    </div>
+                    <SearchBox />
                 </li>
             </ul>
         </nav>

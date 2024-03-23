@@ -1,0 +1,25 @@
+
+.connect-wallet {
+    margin-right: 40px;
+    padding: 15px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(7, 51, 95, 0.49);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.connect-wallet:hover {
+    background-color: rgb(43, 71, 110);
+    transform: scale(1.05);
+}
+
+.connect-wallet:focus,
+.connect-wallet:active {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(2, 32, 73, 0.2);
+}
